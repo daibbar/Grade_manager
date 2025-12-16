@@ -1,12 +1,14 @@
-from typing import List, Dict
+from typing import List
 from src.models.note import Note
 
 class Etudiant:
-    def __init__(self, id_etudiant: str, nom: str, prenom: str, annee_universitaire: str):
+    # 1. Add password to __init__ with a default value
+    def __init__(self, id_etudiant: str, nom: str, prenom: str, annee_universitaire: str, password: str = "1234"):
         self.id_etudiant = id_etudiant
         self.nom = nom
         self.prenom = prenom
         self.annee_universitaire = annee_universitaire
+        self.password = password  # <--- NEW FIELD
         self.modules_inscrits: List[str] = [] 
         self.notes: List[Note] = [] 
 
@@ -32,8 +34,9 @@ class Etudiant:
             "nom": self.nom,
             "prenom": self.prenom,
             "annee_universitaire": self.annee_universitaire,
+            "password": self.password, # <--- SAVE IT
             "modules_inscrits": self.modules_inscrits,
-            "notes": [n.to_dict() for n in self.notes] # Serialize nested objects!
+            "notes": [n.to_dict() for n in self.notes]
         }
 
     @classmethod
@@ -42,9 +45,9 @@ class Etudiant:
             data["id_etudiant"], 
             data["nom"], 
             data["prenom"], 
-            data["annee_universitaire"]
+            data["annee_universitaire"],
+            data.get("password", "1234") # <--- LOAD IT (Default to "1234" if missing)
         )
         etudiant.modules_inscrits = data.get("modules_inscrits", [])
-        # Recreate Note objects from the list of dicts
         etudiant.notes = [Note.from_dict(n) for n in data.get("notes", [])]
         return etudiant

@@ -37,16 +37,22 @@ with tab_etudiants:
             nom_new = col1.text_input("Nom")
             prenom_new = col2.text_input("Prénom")
             
+            # --- NEW INPUT ---
+            pwd_new = st.text_input("Mot de passe provisoire", value="1234", type="password")
+            # -----------------
+            
             submitted = st.form_submit_button("Enregistrer l'étudiant")
             if submitted:
                 if manager.get_etudiant_by_id(id_new):
                     st.error("Cet ID existe déjà !")
                 else:
-                    new_etudiant = Etudiant(id_new, nom_new, prenom_new, annee_new)
+                    # Pass the password to the constructor
+                    new_etudiant = Etudiant(id_new, nom_new, prenom_new, annee_new, password=pwd_new)
+                    
                     manager.etudiants.append(new_etudiant)
                     manager.save_etudiants()
-                    st.success(f"Étudiant {nom_new} ajouté !")
-                    st.rerun() # Refresh table immediately
+                    st.success(f"Étudiant {nom_new} ajouté avec succès !")
+                    st.rerun()
 
     if manager.etudiants:
         data = [e.to_dict() for e in manager.etudiants]
@@ -66,6 +72,7 @@ with tab_profs:
             col1, col2 = st.columns(2)
             id_prof = col1.text_input("ID Professeur (ex: P001)")
             empty_col = col2.empty() # Spacer
+            pwd_prof = col2.text_input("Mot de passe", value="1234", type="password")
             nom_prof = col1.text_input("Nom")
             prenom_prof = col2.text_input("Prénom")
             

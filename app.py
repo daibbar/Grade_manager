@@ -52,26 +52,32 @@ with st.form("login_form"):
                 st.error("Identifiant ou mot de passe incorrect.")
 
         # B. AUTH PROFESSEUR
+# B. AUTH PROFESSEUR
         elif role == "Professeur":
             # Find prof by ID
             prof = next((p for p in manager.professeurs if p.id_professeur == username), None)
-            if prof and password == "1234": # Hardcoded password for demo
+            
+            # CORRECTION: Check the actual password object, not "1234"
+            if prof and password == prof.password: 
                 st.session_state["authenticated"] = True
                 st.session_state["role"] = "professeur"
                 st.session_state["user_id"] = prof.id_professeur
                 st.success(f"Bienvenue Professeur {prof.nom}")
                 st.rerun()
             else:
-                st.error("ID inconnu ou mot de passe incorrect (Essayez '1234').")
+                st.error("ID inconnu ou mot de passe incorrect.")
 
         # C. AUTH ETUDIANT
+# C. AUTH ETUDIANT
         elif role == "Étudiant":
             etud = manager.get_etudiant_by_id(username)
-            if etud and password == "1234":
+            
+            # CHECK PASSWORD FROM OBJECT
+            if etud and password == etud.password:  # <--- CHANGED HERE
                 st.session_state["authenticated"] = True
                 st.session_state["role"] = "etudiant"
                 st.session_state["user_id"] = etud.id_etudiant
                 st.success(f"Bienvenue {etud.nom}")
                 st.rerun()
             else:
-                st.error("ID inconnu ou mot de passe incorrect (Essayez '1234').")
+                st.error("ID inconnu ou mot de passe incorrect.")
