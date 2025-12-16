@@ -1,0 +1,31 @@
+[
+    {
+        "id_etudiant": "D1354",
+        "nom": "daibbar",
+        "prenom": "mohamed",
+        "annee_universitaire": "2025-2026",
+        "modules_inscrits": [
+            "M101"
+        ],
+        "notes": [
+            {
+                "code_module": "M101",
+                "valeur": 15.0,
+                "type_note": "Contrôle"
+            },
+            {
+                "code_module": "M101",
+                "valeur": 15.0,
+                "type_note": "Contrôle"
+            }
+        ]
+    },
+    {
+        "id_etudiant": "D1322",
+        "nom": "deroui",
+        "prenom": "mouad",
+        "annee_universitaire": "2024-2025",
+        "modules_inscrits": [],
+        "notes": []
+    }
+]
