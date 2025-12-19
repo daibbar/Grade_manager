@@ -5,13 +5,8 @@
         "annee_universitaire": "2025-2026",
         "id_professeur": "P001",
         "etudiants_inscrits": [
-<<<<<<< HEAD
             "D1354" , "D1322"
-=======
-            "D1354",
-            "D123",
-            "D098"
->>>>>>> 0bb366c (add rapport)
+
         ]
     }
 ]
