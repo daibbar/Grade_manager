@@ -1,4 +1,6 @@
-class Note:
+from src.models.base import Base
+
+class Note(Base):
     def __init__(self, code_module: str, valeur: float, type_note: str):
         # Validation strict (Rule 4 in CDC)
         if not (0 <= valeur <= 20):

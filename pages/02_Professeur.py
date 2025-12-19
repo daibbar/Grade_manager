@@ -25,7 +25,7 @@ if not current_prof:
     st.error("Erreur de profil. Contactez l'admin.")
     st.stop()
 
-st.sidebar.button("Se déconnecter", on_click=lambda: st.session_state.update({"authenticated": False}) or st.rerun())
+# st.sidebar.button("Se déconnecter", on_click=lambda: st.session_state.update({"authenticated": False}) or st.rerun())
 
 st.divider()
 

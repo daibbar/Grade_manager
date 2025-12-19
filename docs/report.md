@@ -8,7 +8,7 @@
 
 **École :** École Nationale des Sciences Appliquées (ENSA) de Khouribga
 
-**Année Universitaire :** 2024-2025
+**Année Universitaire :** 2025-2026
 
 ---
 

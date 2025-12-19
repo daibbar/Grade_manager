@@ -1,7 +1,7 @@
 from typing import List
-from utilisateur import Utilisateur
+from src.models.base import Base
 
-class Professeur(Utilisateur):
+class Professeur(Base):
     # 1. Add password to __init__ with default "1234"
     def __init__(self, id_professeur: str, nom: str, prenom: str, password: str = "1234"):
         self.id_professeur = id_professeur

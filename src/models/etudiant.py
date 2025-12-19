@@ -1,7 +1,8 @@
 from typing import List
 from src.models.note import Note
+from src.models.base import Base
 
-class Etudiant:
+class Etudiant(Base):
     # 1. Add password to __init__ with a default value
     def __init__(self, id_etudiant: str, nom: str, prenom: str, annee_universitaire: str, password: str = "1234"):
         self.id_etudiant = id_etudiant

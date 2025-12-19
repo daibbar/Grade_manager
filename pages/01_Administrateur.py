@@ -33,7 +33,7 @@ with tab_etudiants:
         with st.form("add_student_form"):
             col1, col2 = st.columns(2)
             id_new = col1.text_input("ID Étudiant (ex: E101)")
-            annee_new = col2.text_input("Année Universitaire", value="2024-2025")
+            annee_new = col2.text_input("Année Universitaire", value="2025-2026")
             nom_new = col1.text_input("Nom")
             prenom_new = col2.text_input("Prénom")
             
@@ -112,7 +112,7 @@ with tab_modules:
             with st.form("add_module_form"):
                 col1, col2 = st.columns(2)
                 code_mod = col1.text_input("Code Module (ex: M101)")
-                annee_mod = col2.text_input("Année", value="2024-2025")
+                annee_mod = col2.text_input("Année", value="2025-2026")
                 intitule = st.text_input("Intitulé du module")
                 
                 # Dynamic Selectbox for Professor

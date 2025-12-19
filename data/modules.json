@@ -5,8 +5,15 @@
         "annee_universitaire": "2025-2026",
         "id_professeur": "P001",
         "etudiants_inscrits": [
-            "D1354" , "D1322"
-
+            "D1354",
+            "D1322"
         ]
+    },
+    {
+        "code_module": "M100",
+        "intitule": "Python",
+        "annee_universitaire": "2025-2026",
+        "id_professeur": "P002",
+        "etudiants_inscrits": []
     }
 ]

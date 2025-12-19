@@ -1,7 +1,6 @@
-from abs import ABC
+from abc import ABC, abstractmethod
 
-class Utilisateur(ABC):
-    
+class Base(ABC):
    @abstractmethod
    def to_dict(self):
       pass

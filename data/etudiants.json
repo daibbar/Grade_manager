@@ -18,6 +18,11 @@
                 "code_module": "M101",
                 "valeur": 15.0,
                 "type_note": "Exam"
+            },
+            {
+                "code_module": "M101",
+                "valeur": 1.0,
+                "type_note": "Projet"
             }
         ]
     },
@@ -25,9 +30,11 @@
         "id_etudiant": "D1322",
         "nom": "deroui",
         "prenom": "mouad",
-
         "annee_universitaire": "2025-2026",
-        "modules_inscrits": ["M101"],
+        "password": "1234",
+        "modules_inscrits": [
+            "M101"
+        ],
         "notes": [
             {
                 "code_module": "M101",
@@ -40,6 +47,14 @@
                 "type_note": "Exam"
             }
         ]
-
+    },
+    {
+        "id_etudiant": "E1000",
+        "nom": "yahya",
+        "prenom": "abid",
+        "annee_universitaire": "2025-2026",
+        "password": "1234",
+        "modules_inscrits": [],
+        "notes": []
     }
 ]

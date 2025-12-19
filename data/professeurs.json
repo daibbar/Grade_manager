@@ -3,8 +3,18 @@
         "id_professeur": "P001",
         "nom": "yahya",
         "prenom": "Labser ",
+        "password": "1234",
         "modules_enseignes": [
             "M101"
+        ]
+    },
+    {
+        "id_professeur": "P002",
+        "nom": "Imane",
+        "prenom": "El Malki",
+        "password": "1234",
+        "modules_enseignes": [
+            "M100"
         ]
     }
 ]

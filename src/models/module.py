@@ -1,6 +1,7 @@
 from typing import List
+from src.models.base import Base
 
-class Module:
+class Module(Base):
     def __init__(self, code_module: str, intitule: str, annee_universitaire: str, id_professeur: str = None):
         self.code_module = code_module
         self.intitule = intitule

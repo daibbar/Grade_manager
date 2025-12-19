@@ -24,7 +24,7 @@ if not student:
     st.error("Erreur : Profil étudiant introuvable.")
     st.stop()
 
-st.sidebar.button("Se déconnecter", on_click=lambda: st.session_state.update({"authenticated": False}) or st.rerun())
+# st.sidebar.button("Se déconnecter", on_click=lambda: st.session_state.update({"authenticated": False}) or st.rerun())
 
 st.divider()
 
