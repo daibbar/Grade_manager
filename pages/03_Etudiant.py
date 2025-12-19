@@ -2,10 +2,6 @@ import streamlit as st
 import pandas as pd
 from src.services.data_manager import DataManager
 
-import streamlit as st
-import pandas as pd
-from src.services.data_manager import DataManager
-
 st.set_page_config(page_title="Espace Étudiant", page_icon="🎓")
 
 # --- SECURITY CHECK ---

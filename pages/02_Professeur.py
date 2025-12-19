@@ -3,11 +3,6 @@ import pandas as pd
 from src.services.data_manager import DataManager
 from src.models.note import Note
 
-import streamlit as st
-import pandas as pd
-from src.services.data_manager import DataManager
-from src.models.note import Note
-
 st.set_page_config(page_title="Espace Professeur", page_icon="👨‍🏫")
 
 # --- SECURITY CHECK ---

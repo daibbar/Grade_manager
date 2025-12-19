@@ -1,8 +1,8 @@
 [
     {
         "id_professeur": "P001",
-        "nom": "Turing",
-        "prenom": "Alan ",
+        "nom": "yahya",
+        "prenom": "Labser ",
         "modules_enseignes": [
             "M101"
         ]
