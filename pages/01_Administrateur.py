@@ -60,6 +60,30 @@ with tab_etudiants:
         st.dataframe(df[["id_etudiant", "nom", "prenom", "annee_universitaire"]], use_container_width=True)
     else:
         st.info("Aucun étudiant enregistré.")
+    
+    if manager.etudiants:  
+        # Bouton de suppression
+        with st.expander("🗑️ Supprimer un étudiant", expanded=False):
+            with st.form("confirm_delete_form_etud"):
+                # Sélection simple
+                etudiant_choisi = st.selectbox(
+                    "Choisir l'étudiant à supprimer :",
+                    options=manager.etudiants,
+                    format_func=lambda e: f"{e.id_etudiant} - {e.nom} {e.prenom}"
+                )
+                st.error(f"⚠️ Êtes-vous sûr de vouloir supprimer {etudiant_choisi.nom} {etudiant_choisi.prenom} ?")
+                
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.form_submit_button("✅ Oui, supprimer"):
+                        manager.supprimer_etudiant(etudiant_choisi.id_etudiant)
+                        st.success("Étudiant supprimé !")
+                        st.rerun()
+                with col2:
+                    if st.form_submit_button("❌ Non, annuler"):
+                        st.rerun()
+    else:
+        st.info("Aucun étudiant enregistré.")
 
 # ==========================================
 # TAB 2: GESTION DES PROFESSEURS
@@ -97,6 +121,31 @@ with tab_profs:
         st.dataframe(df[["id_professeur", "nom", "prenom", "nb_modules"]], use_container_width=True)
     else:
         st.info("Aucun professeur enregistré.")
+    
+    if manager.professeurs:  
+        # Bouton de suppression
+        with st.expander("🗑️ Supprimer un professeur", expanded=False):
+            with st.form("confirm_delete_form_prof"):
+                # Sélection simple
+                professeur_choisi = st.selectbox(
+                    "Choisir le professeur à supprimer :",
+                    options=manager.professeurs,
+                    format_func=lambda e: f"{e.id_professeur} - {e.nom} {e.prenom}"
+                )
+                st.error(f"⚠️ Êtes-vous sûr de vouloir supprimer {professeur_choisi.nom} {professeur_choisi.prenom} ?")
+                
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.form_submit_button("✅ Oui, supprimer"):
+                        manager.supprimer_professeur(professeur_choisi.id_professeur)
+                        st.success("Professeur supprimé !")
+                        st.rerun()
+                with col2:
+                    if st.form_submit_button("❌ Non, annuler"):
+                        st.rerun()
+    else:
+        st.info("Aucun professeur enregistré.")
+
 
 # ==========================================
 # TAB 3: GESTION DES MODULES
@@ -145,6 +194,30 @@ with tab_modules:
         df = pd.DataFrame(data)
         df["nb_etudiants"] = df["etudiants_inscrits"].apply(len)
         st.dataframe(df[["code_module", "intitule", "annee_universitaire", "id_professeur", "nb_etudiants"]], use_container_width=True)
+    else:
+        st.info("Aucun module enregistré.")
+
+    if manager.modules:  
+        # Bouton de suppression
+        with st.expander("🗑️ Supprimer un module", expanded=False):
+            with st.form("confirm_delete_form_modl"):
+                # Sélection simple
+                module_choisi = st.selectbox(
+                    "Choisir le module à supprimer :",
+                    options=manager.modules,
+                    format_func=lambda e: f"{e.code_module} - {e.intitule} {e.annee_universitaire}"
+                )
+                st.error(f"⚠️ Êtes-vous sûr de vouloir supprimer {module_choisi.intitule} {module_choisi.annee_universitaire} ?")
+                
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.form_submit_button("✅ Oui, supprimer"):
+                        manager.supprimer_module(module_choisi.code_module)
+                        st.success("Module supprimé !")
+                        st.rerun()
+                with col2:
+                    if st.form_submit_button("❌ Non, annuler"):
+                        st.rerun()
     else:
         st.info("Aucun module enregistré.")
 

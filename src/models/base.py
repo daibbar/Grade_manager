@@ -5,6 +5,6 @@ class Base(ABC):
    def to_dict(self):
       pass
 
-   abstractmethod
+   @abstractmethod
    def from_dict(cls, data):
       pass

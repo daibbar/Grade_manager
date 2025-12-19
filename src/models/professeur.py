@@ -8,7 +8,7 @@ class Professeur(Base):
         self.nom = nom
         self.prenom = prenom
         self.password = password # <--- NEW FIELD
-        self.modules_enseignes: List[str] = [] 
+        self.modules_enseignes: List[str] = []
 
     def assigner_module(self, code_module: str):
         if code_module not in self.modules_enseignes:

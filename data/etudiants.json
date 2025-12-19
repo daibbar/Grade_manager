@@ -6,7 +6,8 @@
         "annee_universitaire": "2025-2026",
         "password": "1234",
         "modules_inscrits": [
-            "M101"
+            "M101",
+            "M100"
         ],
         "notes": [
             {
@@ -23,6 +24,11 @@
                 "code_module": "M101",
                 "valeur": 1.0,
                 "type_note": "Projet"
+            },
+            {
+                "code_module": "M100",
+                "valeur": 10.0,
+                "type_note": "Examen"
             }
         ]
     },
@@ -47,14 +53,5 @@
                 "type_note": "Exam"
             }
         ]
-    },
-    {
-        "id_etudiant": "E1000",
-        "nom": "yahya",
-        "prenom": "abid",
-        "annee_universitaire": "2025-2026",
-        "password": "1234",
-        "modules_inscrits": [],
-        "notes": []
     }
 ]

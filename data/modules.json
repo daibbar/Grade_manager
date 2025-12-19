@@ -14,6 +14,8 @@
         "intitule": "Python",
         "annee_universitaire": "2025-2026",
         "id_professeur": "P002",
-        "etudiants_inscrits": []
+        "etudiants_inscrits": [
+            "D1354"
+        ]
     }
 ]

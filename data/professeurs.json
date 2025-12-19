@@ -5,7 +5,8 @@
         "prenom": "Labser ",
         "password": "1234",
         "modules_enseignes": [
-            "M101"
+            "M101",
+            "M102"
         ]
     },
     {

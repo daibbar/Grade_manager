@@ -94,3 +94,37 @@ class DataManager:
             if m.code_module == code_module:
                 return m
         return None
+    
+    # ==========================
+    # FONCTIONS DE SUPPRESSION
+    # ==========================
+
+    def supprimer_etudiant(self, id_etudiant: str):
+        """
+        Supprime un étudiant par son ID
+        """
+        # Supprimer de la liste en mémoire
+        self.etudiants = [e for e in self.etudiants if e.id_etudiant != id_etudiant]
+            
+        # Sauvegarder sur disque
+        self.save_etudiants()
+
+    def supprimer_professeur(self, id_professeur: str):
+        """
+        Supprime un professeur par son ID
+        """
+        # Supprimer de la liste en mémoire
+        self.professeurs = [e for e in self.professeurs if e.id_professeur != id_professeur]
+            
+        # Sauvegarder sur disque
+        self.save_professeurs()
+
+    def supprimer_module(self, code_module: str):
+        """
+        Supprime un module par son ID
+        """   
+        # Supprimer de la liste en mémoire
+        self.modules = [e for e in self.modules if e.code_module != code_module]
+            
+        # Sauvegarder sur disque
+        self.save_modules()
